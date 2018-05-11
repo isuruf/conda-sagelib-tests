@@ -1,0 +1,15 @@
+image: continuumio/miniconda3:latest
+
+before_script:
+- conda config --add channels conda-forge 
+- conda create -n sage python=2
+- source activate sage
+- conda install sage=8.1
+- git clone git.sagemath.org sagemath
+- cd sagemath
+
+tests:
+  stage: test
+  script:
+  - git checkout sage-8.1
+  - sage -tp src/
