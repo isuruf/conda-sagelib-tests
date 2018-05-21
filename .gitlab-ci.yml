@@ -12,8 +12,8 @@ tests:
   stage: test
   artifacts:
     paths:
-    - doctest.out
+    - sagemath/doctest.txt
     when: always
   script:
   - git checkout 8.1
-  - sage -tp src/ > doctest.out
+  - sage -tp src/ > doctest.txt
