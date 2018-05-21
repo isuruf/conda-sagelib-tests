@@ -10,6 +10,10 @@ before_script:
 
 tests:
   stage: test
+  artifacts:
+    paths:
+    - doctest.out
+    when: always
   script:
   - git checkout 8.1
-  - sage -tp src/
+  - sage -tp src/ > doctest.out
