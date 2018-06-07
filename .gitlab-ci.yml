@@ -8,7 +8,7 @@ before_script:
 - git clone https://github.com/sagemath/sage.git sagemath
 - cd sagemath
 
-- sudo apt-get install g++-4.8
+- apt-get install g++-4.8
 - ln -s /usr/bin/gcc-4.8 $CONDA_PREFIX/bin/gcc
 - ln -s /usr/bin/g++-4.8 $CONDA_PREFIX/bin/g++
 
