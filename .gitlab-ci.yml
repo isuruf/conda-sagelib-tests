@@ -1,11 +1,16 @@
 image: continuumio/miniconda3:latest
 
 before_script:
-- conda config --add channels conda-forge 
-- conda create -n sage sage=8.2 python=2
+# gcc package depends on mpfr=3 which is incompatible with sage
+- conda install --yes --quiet gcc
+- export PATH=$PATH:/opt/conda/bin
+
+- conda config --add channels conda-forge
+- conda create -n sage sage=8.2 python=2 sphinx jmol pillow twisted
 - source activate sage
 - git clone https://github.com/sagemath/sage.git sagemath
 - cd sagemath
+
 
 tests:
   stage: test
