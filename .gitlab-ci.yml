@@ -1,15 +1,16 @@
 image: continuumio/miniconda3:latest
 
 before_script:
-# gcc package depends on mpfr=3 which is incompatible with sage
-- conda install --yes --quiet gcc
-- export PATH=$PATH:/opt/conda/bin
 
 - conda config --add channels conda-forge
 - conda create -n sage sage=8.2 python=2 sphinx jmol pillow twisted
 - source activate sage
 - git clone https://github.com/sagemath/sage.git sagemath
 - cd sagemath
+
+- sudo apt-get install g++-4.8
+- ln -s /usr/bin/gcc-4.8 $CONDA_PREFIX/bin/gcc
+- ln -s /usr/bin/g++-4.8 $CONDA_PREFIX/bin/g++
 
 
 tests:
