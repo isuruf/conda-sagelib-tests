@@ -1,3 +1,7 @@
+#!/bin/bash
+
+export PATH=/opt/conda/bin:$PATH
+source activate sage
 git clone https://github.com/sagemath/sage.git sagemath
 cd sagemath
 git checkout 8.2
