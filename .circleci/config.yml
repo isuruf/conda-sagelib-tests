@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: conda-forge/linux-anvil:latest
+      - image: condaforge/linux-anvil
     steps:
       - checkout
       - run: ./install_sage.sh

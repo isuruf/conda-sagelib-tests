@@ -1,4 +1,4 @@
-image: conda-forge/linux-anvil:latest
+image: condaforge/linux-anvil:latest
 
 before_script:
 - ./install_sage.sh
