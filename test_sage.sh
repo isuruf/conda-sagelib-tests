@@ -2,10 +2,17 @@
 
 source /opt/docker/bin/entrypoint_source
 source activate sage
+
 git clone https://github.com/sagemath/sage.git sagemath
 cd sagemath
 git checkout 8.2
+
+ln -s $CONDA_PREFIX local
+export SAGE_ROOT=`pwd`
+export SAGE_LOCAL=`pwd`/local
+
 sage -tp src/ > doctest.txt || true
+
 conda list '^sagelib$'
 conda list '^sage$'
 cat doctest.txt | grep '^sage -t ' | grep '#' > doctest.summary.txt || true
