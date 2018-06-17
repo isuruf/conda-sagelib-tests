@@ -3,13 +3,11 @@
 source /opt/docker/bin/entrypoint_source
 source activate sage
 
-git clone https://github.com/sagemath/sage.git sagemath
-cd sagemath
-git checkout 8.2
-
 ln -s $CONDA_PREFIX local
 export SAGE_ROOT=`pwd`
 export SAGE_LOCAL=`pwd`/local
+ls $SAGE_ROOT
+ls $SAGE_LOCAL
 
 sage -tp src/ > doctest.txt || true
 

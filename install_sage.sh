@@ -1,6 +1,10 @@
 #!/bin/bash
 
 source /opt/docker/bin/entrypoint_source
-conda config --add channels conda-forge
-conda create -n sage sage=8.2 python=2 tachyon
 
+git clone https://github.com/sagemath/sage.git sagemath
+cd sagemath
+git checkout 8.2
+
+conda config --add channels conda-forge
+conda create -p `pwd`/local sage=8.2 python=2 tachyon
