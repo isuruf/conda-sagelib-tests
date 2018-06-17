@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH=/opt/conda/bin:$PATH
+source /opt/docker/bin/entrypoint_source
 source activate sage
 git clone https://github.com/sagemath/sage.git sagemath
 cd sagemath
