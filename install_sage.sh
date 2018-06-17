@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yum install -y liberation-sans-fonts libXtst
+sudo yum install -y liberation-sans-fonts libXtst
 
 source /opt/docker/bin/entrypoint_source
 conda config --add channels conda-forge
