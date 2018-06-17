@@ -9,7 +9,6 @@ tests:
     paths:
     - sagemath/doctest.txt
     - sagemath/doctest.summary.txt
-    - sagemath/temp_folder.tar.gz
     when: always
   script:
   - ./test_sage.sh
