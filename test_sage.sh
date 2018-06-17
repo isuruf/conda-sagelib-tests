@@ -6,6 +6,7 @@ git clone https://github.com/sagemath/sage.git sagemath
 cd sagemath
 git checkout 8.2
 sage -tp src/doc/en/prep/Advanced-2DPlotting.rst > doctest.txt || true
+tar -czvf temp_folder.tar.gz /home/conda/.sage/temp/
 conda list '^sagelib$'
 conda list '^sage$'
 cat doctest.txt | grep '^sage -t ' | grep '#' > doctest.summary.txt || true
