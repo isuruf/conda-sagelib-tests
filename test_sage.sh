@@ -1,11 +1,11 @@
 #!/bin/bash
 
 cd sagemath
-export SAGE_ROOT=`pwd`
-export SAGE_LOCAL=`pwd`/local
 
 source /opt/docker/bin/entrypoint_source
-source activate $SAGE_LOCAL
+source activate `pwd`/local
+export SAGE_LOCAL=`pwd`/local
+export SAGE_ROOT=`pwd`
 ls $SAGE_ROOT
 ls $SAGE_LOCAL
 
