@@ -1,11 +1,11 @@
 #!/bin/bash
 
-source /opt/docker/bin/entrypoint_source
-source activate sage
-
-ln -s $CONDA_PREFIX local
+cd sagemath
 export SAGE_ROOT=`pwd`
 export SAGE_LOCAL=`pwd`/local
+
+source /opt/docker/bin/entrypoint_source
+source activate $SAGE_LOCAL
 ls $SAGE_ROOT
 ls $SAGE_LOCAL
 
