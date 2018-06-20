@@ -7,4 +7,4 @@ cd sagemath
 git checkout 8.2
 
 conda config --add channels conda-forge
-conda create -p `pwd`/local sage=8.2 python=2 tachyon
+conda create -p `pwd`/local sage=8.2 python=2 numpy=1.13
