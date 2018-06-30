@@ -6,7 +6,6 @@ jobs:
     steps:
       - checkout
       - run: ./install_sage.sh
-      - run: ./test_sage.sh
 workflows:
   version: 2
   build_and_test:
